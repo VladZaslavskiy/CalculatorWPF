@@ -1,0 +1,19 @@
+﻿<Window x:Class="Calculator.Views.AboutView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Calculator.Views"
+        mc:Ignorable="d"
+        Title="AboutView" Height="300" Width="300">
+    <Grid>
+        <TextBlock FontSize="18" TextWrapping=" wrap">
+            Simple WPF + Caliburn.Micro calculator created by Vlad Zaslavskiy for Quipu GmbH
+            My first WPF project
+            
+            
+            
+            25.10.2021
+        </TextBlock>
+    </Grid>
+</Window>

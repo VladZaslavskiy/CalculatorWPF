@@ -7,7 +7,7 @@ using System.Windows.Controls;
 
 namespace Calculator.ViewModels
 {
-    public class ShellViewModel : PropertyChangedBase
+    public class ShellViewModel : Conductor<object>
     {
         private string _display = "0";
 
@@ -285,10 +285,23 @@ namespace Calculator.ViewModels
             Display = Display.Remove(Display.Length - 1);
         }
 
-        public void Button_Click()
-        {
-            MessageBox.Show("Кнопка нажата");
-        }
         
+    private readonly IWindowManager window = new WindowManager();
+        public void Info()
+        {
+            InfoViewModel ivm = new InfoViewModel();
+            ActivateItemAsync(ivm);
+            window.ShowDialogAsync(ivm);
+        }
+
+        public void About()
+        {
+            AboutViewModel avm = new AboutViewModel();
+            ActivateItemAsync(avm);
+            window.ShowDialogAsync(avm);
+        }
+
+
+
     }
 }

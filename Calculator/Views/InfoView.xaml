@@ -1,0 +1,16 @@
+﻿<Window x:Class="Calculator.Views.InfoView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Calculator.Views"
+        mc:Ignorable="d"
+        Title="InfoView" Height="400" Width="400">
+    <Grid>
+        <TextBlock FontSize="18" TextWrapping="Wrap">
+            Мой первый проект с использованием WPF + Caliburn.Micro изученным за 5 дней) 
+            Будет интересно услышать фитбек, узнать какие были ошибки и как использовать 
+            фреймворк лучше 
+        </TextBlock>
+    </Grid>
+</Window>

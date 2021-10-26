@@ -49,6 +49,9 @@
         <Button x:Name="Division" FontSize="22" Grid.Row="5" Grid.Column="3">/</Button>
         <Button x:Name="Equal" FontSize="22" Grid.Row="6" Grid.Column="2" Grid.ColumnSpan="2">=</Button>
 
+        <Button x:Name="Info" FontSize="22" Grid.Row="1" Grid.Column="0">Info</Button>
+        <Button x:Name="About" FontSize="22" Grid.Row="1" Grid.Column="3">About</Button>
+        
 
         <TextBox x:Name="Display" IsReadOnly="True" TextAlignment="Right" VerticalAlignment="Bottom" FontSize="100" Grid.Column="0" Grid.ColumnSpan="4" Height="127"></TextBox>
     </Grid>

@@ -11,4 +11,8 @@
     <PackageReference Include="Castle.Windsor" Version="5.1.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+
 </Project>
