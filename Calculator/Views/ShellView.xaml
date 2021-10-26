@@ -42,7 +42,7 @@
         <Button x:Name="Square" FontSize="22" Grid.Row="2" Grid.Column="1">x^2</Button>
         <Button x:Name="Sqrt" FontSize="22" Grid.Row="2" Grid.Column="0">Sqrt</Button>
         <Button x:Name="Dot" FontSize="22" Grid.Row="6" Grid.Column="0">,</Button>
-        <Button x:Name="Delete" FontSize="22" Grid.Row="1" Grid.Column="2">Delete</Button>
+        <Button x:Name="DeleteLast" FontSize="22" Grid.Row="1" Grid.Column="2">Delete</Button>
         <Button x:Name="Addition" FontSize="22" Grid.Row="2" Grid.Column="3">+</Button>
         <Button x:Name="Subtraction" FontSize="22" Grid.Row="3" Grid.Column="3">-</Button>
         <Button x:Name="Multiplication" FontSize="22" Grid.Row="4" Grid.Column="3">*</Button>

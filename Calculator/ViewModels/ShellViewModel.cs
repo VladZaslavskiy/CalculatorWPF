@@ -119,12 +119,11 @@ namespace Calculator.ViewModels
 
         public void Addition()
         {
-            if (action == true)
-                Equal();
-            else if (Display == "" )
-            {
+            if (Display == "" || Display[^1] == '+' || Display[^1] == '-' || Display[^1] == '*'
+                || Display[^1] == '/' || Display[^1] == '%' )
                 return;
-            }
+            else if (action == true)
+                Equal();
             Display += "+";
             action = true;
             dot = false;
@@ -132,13 +131,17 @@ namespace Calculator.ViewModels
 
         public void Subtraction()
         {
-            if (action == true)
-                Equal();
-            else if (Display == "")
+           
+            if (Display == "")
             {
                 Display += "-";
                 return;
             }
+            else if (Display[^1] == '+' || Display[^1] == '-' || Display[^1] == '*'
+                || Display[^1] == '/' || Display[^1] == '%')
+                return;
+            else if (action == true)
+                Equal();
             Display += "-";
             action = true;
             dot = false;
@@ -146,12 +149,11 @@ namespace Calculator.ViewModels
 
         public void Multiplication()
         {
-            if (action == true)
-                Equal();
-            else if (Display == "")
-            {
+            if (Display == "" || Display[^1] == '+' || Display[^1] == '-' || Display[^1] == '*'
+               || Display[^1] == '/' || Display[^1] == '%')
                 return;
-            }
+            else if (action == true)
+                Equal();
             Display += "*";
             action = true;
             dot = false;
@@ -159,12 +161,11 @@ namespace Calculator.ViewModels
 
         public void Division()
         {
-            if (action == true)
-                Equal();
-            else if (Display == "")
-            {
+            if (Display == "" || Display[^1] == '+' || Display[^1] == '-' || Display[^1] == '*'
+               || Display[^1] == '/' || Display[^1] == '%')
                 return;
-            }
+            else if (action == true)
+                Equal();
             Display += "/";
             action = true;
             dot = false;
@@ -172,12 +173,11 @@ namespace Calculator.ViewModels
 
         public void Percent()
         {
-            if (action == true)
-                Equal();
-            else if (Display == "")
-            {
+            if (Display == "" || Display[^1] == '+' || Display[^1] == '-' || Display[^1] == '*'
+               || Display[^1] == '/' || Display[^1] == '%')
                 return;
-            }
+            else if (action == true)
+                Equal();
             Display += "%";
             action = true;
             dot = false;
@@ -275,6 +275,14 @@ namespace Calculator.ViewModels
         {
             Display = "";
             action = false;
+        }
+
+        public void DeleteLast()
+        {
+            if (Display[Display.Length - 1] == '+' || Display[Display.Length - 1] == '-' || Display[Display.Length - 1] == '*'
+                || Display[Display.Length - 1] == '/' || Display[Display.Length - 1] == '%')
+                action = false;
+            Display = Display.Remove(Display.Length - 1);
         }
 
         public void Button_Click()
