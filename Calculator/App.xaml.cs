@@ -1,4 +1,8 @@
-﻿using System;
+﻿using Calculator.Views;
+using Castle.Core.Logging;
+using Castle.Windsor;
+using Serilog;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,5 +17,6 @@ namespace Calculator
     /// </summary>
     public partial class App : Application
     {
+       
     }
 }

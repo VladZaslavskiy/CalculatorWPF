@@ -4,11 +4,23 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
+using Serilog;
+
 
 namespace Calculator.ViewModels
 {
     public class ShellViewModel : Conductor<object>
     {
+
+        private readonly ILogger _logger;
+        private readonly IWindowManager _window;
+        public ShellViewModel(ILogger logger, IWindowManager window)
+        {
+            _logger = logger;
+            _window = window;
+            logger.Information("Test Error");
+        }
+
         private string _display = "0";
 
         public string Display
@@ -242,6 +254,9 @@ namespace Calculator.ViewModels
 
         public void Equal()
         {
+            if (Display == "" || Display[^1] == '+' || Display[^1] == '-' || Display[^1] == '*'
+               || Display[^1] == '/' || Display[^1] == '%')
+                return;
             Parser();
             switch (sign)
             {
@@ -286,19 +301,18 @@ namespace Calculator.ViewModels
         }
 
         
-    private readonly IWindowManager window = new WindowManager();
-        public void Info()
+         public void Info()
         {
             InfoViewModel ivm = new InfoViewModel();
             ActivateItemAsync(ivm);
-            window.ShowDialogAsync(ivm);
+            _window.ShowDialogAsync(ivm);
         }
 
         public void About()
         {
             AboutViewModel avm = new AboutViewModel();
             ActivateItemAsync(avm);
-            window.ShowDialogAsync(avm);
+            _window.ShowDialogAsync(avm);
         }
 
 
