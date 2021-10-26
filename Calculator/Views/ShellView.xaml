@@ -1,0 +1,55 @@
+﻿<Window x:Class="Calculator.Views.ShellView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Calculator.Views"
+        mc:Ignorable="d"
+        Title="Calculator" Height="610" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150*"/>
+            <ColumnDefinition Width="150*"/>
+            <ColumnDefinition Width="150*"/>
+            <ColumnDefinition Width="150*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="130*" />
+            <RowDefinition Height="80*" />
+            <RowDefinition Height="80*" />
+            <RowDefinition Height="80*" />
+            <RowDefinition Height="80*" />
+            <RowDefinition Height="80*" />
+            <RowDefinition Height="80*" />
+        </Grid.RowDefinitions>
+        
+        <!--Nums -->
+        <Button x:Name="Seven" FontSize="22" Grid.Row="3" Grid.Column="0">7</Button>
+        <Button x:Name="Four" FontSize="22" Grid.Row="4" Grid.Column="0">4</Button>
+        <Button x:Name="One" FontSize="22" Grid.Row="5" Grid.Column="0">1</Button>
+        <Button x:Name="Eight" FontSize="22" Grid.Row="3" Grid.Column="1">8</Button>
+        <Button x:Name="Five" FontSize="22" Grid.Row="4" Grid.Column="1">5</Button>
+        <Button x:Name="Two" FontSize="22" Grid.Row="5" Grid.Column="1">2</Button>
+        <Button x:Name="Nine" FontSize="22" Grid.Row="3" Grid.Column="2">9</Button>
+        <Button x:Name="Six" FontSize="22" Grid.Row="4" Grid.Column="2">6</Button>
+        <Button x:Name="Three" FontSize="22" Grid.Row="5" Grid.Column="2">3</Button>
+        <Button x:Name="Zero" FontSize="22" Grid.Row="6" Grid.Column="1">0</Button>
+
+
+
+        <Button x:Name="Percent" FontSize="22" Grid.Row="2" Grid.Column="2">%</Button>
+        <Button x:Name="ClearAll" FontSize="22" Grid.Row="1" Grid.Column="1" >CE</Button>
+        <Button x:Name="Square" FontSize="22" Grid.Row="2" Grid.Column="1">x^2</Button>
+        <Button x:Name="Sqrt" FontSize="22" Grid.Row="2" Grid.Column="0">Sqrt</Button>
+        <Button x:Name="Dot" FontSize="22" Grid.Row="6" Grid.Column="0">,</Button>
+        <Button x:Name="Delete" FontSize="22" Grid.Row="1" Grid.Column="2">Delete</Button>
+        <Button x:Name="Addition" FontSize="22" Grid.Row="2" Grid.Column="3">+</Button>
+        <Button x:Name="Subtraction" FontSize="22" Grid.Row="3" Grid.Column="3">-</Button>
+        <Button x:Name="Multiplication" FontSize="22" Grid.Row="4" Grid.Column="3">*</Button>
+        <Button x:Name="Division" FontSize="22" Grid.Row="5" Grid.Column="3">/</Button>
+        <Button x:Name="Equal" FontSize="22" Grid.Row="6" Grid.Column="2" Grid.ColumnSpan="2">=</Button>
+
+
+        <TextBox x:Name="Display" IsReadOnly="True" TextAlignment="Right" VerticalAlignment="Bottom" FontSize="100" Grid.Column="0" Grid.ColumnSpan="4" Height="127"></TextBox>
+    </Grid>
+</Window>
