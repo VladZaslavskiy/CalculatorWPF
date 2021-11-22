@@ -35,7 +35,10 @@ namespace Calculator
             _container.Register(Component.For<IWindowManager>().ImplementedBy<WindowManager>().LifestyleSingleton());
             _container.Register(Component.For<IEventAggregator>().ImplementedBy<EventAggregator>().LifestyleSingleton());
             _container.Register(Component.For<ShellViewModel>().ImplementedBy<ShellViewModel>());
-        
+            _container.Register(Component.For<InfoViewModel>().ImplementedBy<InfoViewModel>());
+            _container.Register(Component.For<AboutViewModel>().ImplementedBy<AboutViewModel>());
+            _container.Register(Component.For<ErrorOperationViewModel>().ImplementedBy<ErrorOperationViewModel>());
+
         }
         protected override object GetInstance(Type service, string key)
         {

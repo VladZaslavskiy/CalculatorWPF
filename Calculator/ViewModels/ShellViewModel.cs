@@ -1,5 +1,6 @@
 ﻿using Caliburn.Micro;
 using System;
+using Caliburn.Micro;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -14,10 +15,18 @@ namespace Calculator.ViewModels
 
         private readonly ILogger _logger;
         private readonly IWindowManager _window;
-        public ShellViewModel(ILogger logger, IWindowManager window)
+        private InfoViewModel _ivm;
+        private AboutViewModel _avm;
+        private ErrorOperationViewModel _err;
+        //private readonly IViewModel _screen;
+        public ShellViewModel(ILogger logger, IWindowManager window, InfoViewModel ivm, AboutViewModel avm, ErrorOperationViewModel err)
         {
             _logger = logger;
             _window = window;
+            _ivm = ivm;
+            _avm = avm;
+            _err = err;
+           // _screen = viewModel;
             logger.Information("Test Error");
         }
 
@@ -37,6 +46,7 @@ namespace Calculator.ViewModels
         double left = 0;
         double right = 0;
         char sign;
+        bool answer = false;
         // Следующий код по идее плохой, но я плохо понял как можно биндить разные кнопки одной функцией
         public void One()
         {
@@ -215,10 +225,20 @@ namespace Calculator.ViewModels
             else
             {
                 if (double.Parse(Display) < 0)
-                { 
-                    MessageBox.Show("For this operation, the number must be> 0", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                    ClearAll();
-                    return;
+                {
+                    //MessageBox.Show("For this operation, the number must be> 0", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                   // ActivateItemAsync(_err);
+                    _window.ShowDialogAsync(_err,null,null);
+                    if (_err.IsOk)
+                    {
+                        ClearAll();                        
+                        return;
+                    }
+                    else if(!_err.IsOk)                    
+                        return;
+                    
+                        
+
                 }
                 else
                 Display = Math.Round(Math.Sqrt(double.Parse(Display)),4).ToString();
@@ -271,8 +291,16 @@ namespace Calculator.ViewModels
                 case '/':
                     if (right == 0)
                     {
-                        MessageBox.Show("Нельзя делить на 0", "Error",MessageBoxButton.OK, MessageBoxImage.Error);
-                        ClearAll();
+                        // MessageBox.Show("Нельзя делить на 0", "Error",MessageBoxButton.OK, MessageBoxImage.Error);
+                        //ActivateItemAsync(_err);                       
+                        _window.ShowDialogAsync(_err, null, null);
+                        if (_err.IsOk)
+                        {
+                            ClearAll();
+                            return;
+                        }
+                        else if (!_err.IsOk)
+                           // return;
                         break;
                     }
                     Display = Math.Round(left / right, 4).ToString();
@@ -303,16 +331,16 @@ namespace Calculator.ViewModels
         
          public void Info()
         {
-            InfoViewModel ivm = new InfoViewModel();
-            ActivateItemAsync(ivm);
-            _window.ShowDialogAsync(ivm);
+            //InfoViewModel ivm = new InfoViewModel();
+            //ActivateItemAsync(_ivm);
+            _window.ShowDialogAsync(_ivm);
         }
 
         public void About()
         {
-            AboutViewModel avm = new AboutViewModel();
-            ActivateItemAsync(avm);
-            _window.ShowDialogAsync(avm);
+            //AboutViewModel avm = new AboutViewModel();
+            //ActivateItemAsync(_avm);
+            _window.ShowDialogAsync(_avm);
         }
 
 
