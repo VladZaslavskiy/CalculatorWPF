@@ -8,10 +8,10 @@ namespace Calculator.ViewModels
     public class ErrorOperationViewModel : Screen
     {
         public bool IsOk{ get; set; }
-        public bool CanAcceptButton
-        {
-            get { return true; /* add logic here */ }
-        }
+        //public bool CanAcceptButton
+        //{
+        //    get { return true; /* add logic here */ }
+        //}
 
         public void AcceptButton()
         {
@@ -19,10 +19,10 @@ namespace Calculator.ViewModels
             IsOk = true;
         }
 
-        public bool CanCancelButton
-        {
-            get { return true; }
-        }
+        //public bool CanCancelButton
+        //{
+        //    get { return true; }
+        //}
 
         public void CancelButton()
         {

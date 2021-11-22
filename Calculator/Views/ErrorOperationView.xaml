@@ -22,7 +22,7 @@
         </Grid.RowDefinitions>
         
         <TextBlock FontSize="18" Grid.Column="1" Grid.ColumnSpan="2" TextBlock.TextAlignment="Center">  Invalid value for this operation</TextBlock>
-        <Button cal:Message.Attach="[Event Click] = [AcceptButton()]" Grid.Column="1" Grid.Row="1">Ok</Button>
-        <Button cal:Message.Attach="[Event Click] = [CancelButton()]" Grid.Column="2" Grid.Row="1">Cancel</Button>
+        <Button cal:Message.Attach="[Event Click] = [AcceptButton()]" Grid.Column="1" Grid.Row="1">Ok(Сlean screen)</Button>
+        <Button cal:Message.Attach="[Event Click] = [CancelButton()]" Grid.Column="2" Grid.Row="1">Cancel(without CE)</Button>
     </Grid>
 </Window>
